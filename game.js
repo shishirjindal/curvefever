@@ -1,7 +1,11 @@
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 500;
-canvas.height = 400;
+canvas.height = 500;
+canvas.style.border = "white 3px solid";
+canvas.style.left = "500px";
+canvas.style.top = "100px";
+canvas.style.position = "absolute";
 document.body.appendChild(canvas);
 
 //Background Image
@@ -64,6 +68,7 @@ var reset = function(){
 	player1.y = Math.floor(Math.random()*200 + 150);
 	player2.x = Math.floor(Math.random()*200 + 150);
 	player2.y = Math.floor(Math.random()*200 + 150);
+	ctx.fillStyle = "rgb(44,62,80)";
 	ctx.fillRect(0,0,canvas.width,canvas.height);
 	player1.theta =  Math.floor(Math.random()*360 + 1);
 	player2.theta =  Math.floor(Math.random()*360 + 1);
@@ -97,8 +102,8 @@ var update = function(mod){
 	if(39 in keydown){
 		player1.theta += player1.omega*mod;
 	}
-	p1color = ctx.getImageData(player1.x+5*player1.speed*Math.cos(Math.PI*player1.theta/180)*mod,player1.y+5*player1.speed*Math.sin(Math.PI*player1.theta/180)*mod,1,1).data[0];
-	if(p1color != 0){
+	p1color = ctx.getImageData(player1.x+7*player1.speed*Math.cos(Math.PI*player1.theta/180)*mod,player1.y+7*player1.speed*Math.sin(Math.PI*player1.theta/180)*mod,1,1).data[0];
+	if(p1color != 44){
 		reset();
 	}
 	player1.x += player1.speed*Math.cos(Math.PI*player1.theta/180)*mod;
@@ -115,8 +120,8 @@ var update = function(mod){
 	if(68 in keydown){
 		player2.theta += player2.omega*mod;
 	}
-	p2color = ctx.getImageData(player2.x+5*player2.speed*Math.cos(Math.PI*player2.theta/180)*mod,player2.y+5*player2.speed*Math.sin(Math.PI*player2.theta/180)*mod,1,1).data[0];
-	if(p2color != 0){
+	p2color = ctx.getImageData(player2.x+7*player2.speed*Math.cos(Math.PI*player2.theta/180)*mod,player2.y+7*player2.speed*Math.sin(Math.PI*player2.theta/180)*mod,1,1).data[0];
+	if(p2color != 44){
 			reset();
 		}
 	player2.x += player2.speed*Math.cos(Math.PI*player2.theta/180)*mod;
