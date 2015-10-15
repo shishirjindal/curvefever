@@ -5,11 +5,62 @@
 			body{
 				background-color: rgb(44,62,80);
 			}
+			#B{
+				background-color: rgb(44,62,80);
+				border-radius: 7px;
+				color:white;
+				border: 1px solid rgb(70,120,180);
+				padding: 5px;
+				width:180px;
+				position: absolute;
+				margin-left: 607px;
+				margin-top: 30px;
+				font-size: 30px;
+			}
+			#demo{
+				background-color: rgb(44,62,80);
+				border-radius: 7px;
+				color:white;
+				padding: 5px;
+				width:10px;
+				position: absolute;
+				margin-left: 560px;
+				margin-top: 30px;
+				font-size: 30px;
+			}
+			#demo2{
+				background-color: rgb(44,62,80);
+				border-radius: 7px;
+				color:white;
+				padding: 5px;
+				width:10px;
+				position: absolute;
+				margin-left: 810px;
+				margin-top: 30px;
+				font-size: 30px;
+			}
+			#img1{
+				margin-top: 42px;
+				margin-left: 520px;	
+				position: absolute;
+				width: 26px;
+			}
+			#img2{
+				margin-top: 42px;
+				margin-left: 850px;	
+				position: absolute;
+				width: 26px;
+			}
 		</style>
 		<meta charset="utf-8">
 		<title>Curver Fever</title>
 	</head>
 	<body>
+		<span id="demo"></span>
+		<span id="demo2"></span>
+		<img src="images/player1.jpg" id="img1">
+		<img src="images/player2.jpg" width="10px" id="img2">
+		<button onclick="reset()" id="B">Start</button>
 		<script src="game.js"></script>
 	</body>
 </html>
